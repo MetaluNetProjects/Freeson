@@ -1,4 +1,4 @@
-#N canvas 637 74 434 459 10;
+#N canvas 638 74 482 459 10;
 #X declare -stdlib zexy;
 #X declare -stdpath AutoPreset;
 #X declare -stdpath nusmuk-utils;
@@ -7,7 +7,7 @@
 #X declare -lib creb;
 #X declare -stdpath Fraise -path kep;
 #X obj 128 134 dac~;
-#N canvas 680 216 541 429 POFWIN 0;
+#N canvas 903 362 541 429 POFWIN 1;
 #X obj 161 277 pofwin;
 #X msg 308 173 framerate \$1;
 #X msg 308 133 30;
@@ -190,7 +190,7 @@
 #X connect 48 0 42 0;
 #X connect 48 0 42 1;
 #X restore 47 38 pd AUDIO_SRC;
-#N canvas 269 99 1118 773 Visual 0;
+#N canvas 271 93 1118 773 Visual 1;
 #X obj 539 87 b;
 #X obj 539 108 t b b;
 #X obj 539 130 timer;
@@ -311,27 +311,27 @@
 #X connect 9 0 10 0;
 #X connect 10 0 6 0;
 #X restore 323 380 pd drawSpectrum2;
-#X obj 23 334 pofcolor 1 1 1 1;
-#X obj 23 308 poftranslate 0 0;
-#X obj 23 356 pofplane 1024 1024;
-#X obj 24 218 t a a;
-#X obj 96 287 * -1;
-#X obj 59 488 pofcolor 1 1 1 1;
-#X obj 59 462 poftranslate 0 0;
-#X obj 59 510 pofplane 1024 1024;
-#X obj 153 386 * -1;
-#X obj 153 408 + 1024;
-#X obj 124 237 r SPECINDEX;
-#X obj 125 259 spigot 1;
-#X obj 432 336 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 55 334 pofcolor 1 1 1 1;
+#X obj 55 308 poftranslate 0 0;
+#X obj 55 356 pofplane 1024 1024;
+#X obj 56 218 t a a;
+#X obj 128 287 * -1;
+#X obj 91 488 pofcolor 1 1 1 1;
+#X obj 91 462 poftranslate 0 0;
+#X obj 91 510 pofplane 1024 1024;
+#X obj 185 386 * -1;
+#X obj 185 408 + 1024;
+#X obj 156 237 r SPECINDEX;
+#X obj 157 259 spigot 1;
+#X obj 432 336 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X floatatom 163 320 5 0 0 0 - - -, f 5;
-#X floatatom 76 253 5 0 0 0 - - -, f 5;
-#X obj 24 150 pofvisible;
-#X obj 24 196 poftexture HISPECTEX;
-#X obj 138 99 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X floatatom 195 320 5 0 0 0 - - -, f 5;
+#X floatatom 108 253 5 0 0 0 - - -, f 5;
+#X obj 56 150 pofvisible;
+#X obj 56 196 poftexture HISPECTEX;
+#X obj 170 99 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 155 123 == 0;
+#X obj 187 123 == 0;
 #X floatatom 392 675 5 0 0 0 - - -, f 5;
 #X msg 739 517 load texturedcercle;
 #X obj 438 428 r SPECINDEX;
@@ -549,7 +549,7 @@
 #X connect 32 0 31 1;
 #X connect 33 0 18 0;
 #X restore 241 379 pd history;
-#X obj 197 126 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 229 126 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 452 804 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
@@ -568,14 +568,14 @@ HISPECTEX 0;
 #X msg 463 286 1;
 #X obj 432 313 change;
 #X obj 352 471 r toShader;
-#X obj 3 109 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
-;
+#X obj 35 109 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
 #X obj 153 77 pofbang 0;
 #X obj 153 50 r VISUAL_COMPUTE;
-#X obj 155 152 pofvisible;
+#X obj 187 152 pofvisible;
 #X obj 280 48 r VISUAL_SHOW;
 #X floatatom 523 454 5 0 0 0 - - -, f 5;
-#X obj 24 83 t a a a;
+#X obj 56 108 t a a a;
 #X obj 539 290 outlet FPS;
 #X msg 204 738 f lowGainB \$1;
 #X floatatom 241 699 5 0 0 0 - - -, f 5;
@@ -591,6 +591,8 @@ HISPECTEX 0;
 ;
 #X obj 24 40 pofvisible 1;
 #X obj 259 641 pofplane 800 800;
+#X obj 24 67 t a a;
+#X obj 24 543 s spotshead;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 1 1 2 1;
@@ -699,7 +701,9 @@ HISPECTEX 0;
 #X connect 99 0 97 0;
 #X connect 100 0 102 0;
 #X connect 101 0 102 0;
-#X connect 102 0 89 0;
+#X connect 102 0 104 0;
+#X connect 104 0 105 0;
+#X connect 104 1 89 0;
 #X restore 47 102 pd Visual;
 #X obj 40 254 specCtl SPEC;
 #X obj 40 419 s toShader;
@@ -714,7 +718,7 @@ HISPECTEX 0;
 #X obj 572 10 loadbang;
 #X msg 170 144 0;
 #X msg 139 144 -1;
-#X obj 68 38 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+#X obj 68 38 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
 ;
 #X obj 249 277 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -815,7 +819,7 @@ HISPECTEX 0;
 #X connect 49 0 44 0;
 #X connect 49 0 46 0;
 #X restore 233 104 pd CLOCK;
-#N canvas 207 534 837 265 FRAISE 0;
+#N canvas 114 547 837 265 FRAISE 0;
 #X obj 18 18 declare -stdpath Fraise -path kep;
 #X obj 18 40 pied/pied 0 36631;
 #X obj 469 65 fruit/fruit 1 phonel1 20 phonelec;
@@ -911,8 +915,6 @@ HISPECTEX 0;
 #X connect 22 0 21 0;
 #X connect 23 0 12 0;
 #X restore 233 80 pd FRAISE;
-#X obj 233 210 rythmPhoneElec 1;
-#X obj 233 182 rythmPhone 3;
 #N canvas 6 74 450 300 ANALYS 0;
 #X obj 36 240 outlet~;
 #X obj 75 115 beatFollower~;
@@ -983,7 +985,7 @@ HISPECTEX 0;
 #X obj 323 191 change;
 #X msg 323 166 0;
 #X msg 356 166 1;
-#X obj 287 216 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 287 216 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X msg 391 143 stop;
 #X obj 75 184 spigot 1;
@@ -1015,12 +1017,25 @@ HISPECTEX 0;
 #X connect 21 0 5 0;
 #X connect 21 0 7 0;
 #X restore 47 63 pd ANALYS;
-#X obj 234 135 rythmPhone 1;
-#X obj 233 158 rythmPhone 2;
-#X connect 3 0 13 0;
+#X obj 233 210 rythmPhoneElec 1 4;
+#X obj 308 323 s spotsAngleOffset;
+#X floatatom 308 304 5 0 0 0 - - -, f 5;
+#X obj 308 260 loadbang;
+#X obj 234 135 rythmPhone 1 1;
+#X msg 308 282 180;
+#X obj 233 158 rythmPhone 2 2;
+#X obj 233 182 rythmPhone 3 3;
+#X obj 378 148 spot 1;
+#X obj 378 208 spot 4;
+#X obj 378 168 spot 2;
+#X obj 378 188 spot 3;
+#X connect 3 0 11 0;
 #X connect 3 1 8 0;
 #X connect 4 0 7 0;
 #X connect 5 0 6 0;
 #X connect 8 0 0 0;
 #X connect 8 0 0 1;
-#X connect 13 0 4 0;
+#X connect 11 0 4 0;
+#X connect 14 0 13 0;
+#X connect 15 0 17 0;
+#X connect 17 0 14 0;

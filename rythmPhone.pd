@@ -1,9 +1,9 @@
-#N canvas 12 131 1313 577 10;
+#N canvas 15 122 1313 626 10;
 #X obj 317 160 r TEMPO;
-#X obj 11 211 r CLOCK;
-#X obj 11 357 ndmetro 4 4;
-#X obj 11 406 sel 1;
-#X obj 59 406 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 11 182 r CLOCK;
+#X obj 11 328 ndmetro 4 4;
+#X obj 11 377 sel 1;
+#X obj 59 377 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 403 50 i;
 #X floatatom 444 52 5 0 0 0 - - -, f 5;
@@ -18,16 +18,16 @@
 #X msg 255 462 1;
 #X msg 196 484 0;
 #X obj 196 436 t b b;
-#X obj 29 237 r \$0-ndmetroA;
-#X obj 11 384 tabread \$0-seqA;
+#X obj 29 208 r \$0-ndmetroA;
+#X obj 11 355 tabread \$0-seqA;
 #X obj 205 9 table \$0-seqA 32;
 #X obj 205 30 table \$0-seqB 32;
-#X obj 196 212 r CLOCK;
-#X obj 196 358 ndmetro 4 4;
-#X obj 196 407 sel 1;
-#X obj 213 239 r \$0-ndmetroB;
-#X obj 196 385 tabread \$0-seqB;
-#X obj 174 407 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 196 183 r CLOCK;
+#X obj 196 329 ndmetro 4 4;
+#X obj 196 378 sel 1;
+#X obj 213 210 r \$0-ndmetroB;
+#X obj 196 356 tabread \$0-seqB;
+#X obj 174 378 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 403 24 r \$0-Key;
 #X obj 9 76 list split 2;
@@ -66,12 +66,12 @@
 #X msg 868 163 A 4 2 1 0 0 1 \, B 8 4 0 1 0 0 0 1 0 0;
 #X msg 882 97 A 4 2 1 1 0 0 \, B 16 4 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0
 1 0 0 1 0 0;
-#X floatatom 252 406 5 0 0 0 - - -, f 5;
+#X floatatom 252 377 5 0 0 0 - - -, f 5;
 #X obj 11 466 del 100;
 #X obj 196 463 del 100;
-#X obj 213 262 unpack f f;
-#X obj 213 305 pack f f;
-#X obj 292 262 t b b f;
+#X obj 213 233 unpack f f;
+#X obj 213 276 pack f f;
+#X obj 292 233 t b b f;
 #X obj 375 373 unpack f f;
 #X obj 375 395 moses 12, f 12;
 #X obj 375 419 pack f f;
@@ -84,9 +84,9 @@
 #X obj 945 357 - 12;
 #X floatatom 945 379 5 0 0 0 - - -, f 5;
 #X floatatom 387 489 5 0 0 0 - - -, f 5;
-#X obj 29 260 unpack f f;
-#X obj 29 303 pack f f;
-#X obj 108 260 t b b f;
+#X obj 29 231 unpack f f;
+#X obj 29 274 pack f f;
+#X obj 108 231 t b b f;
 #X obj 594 501 s \$0-Accel;
 #X obj 945 398 sel 0 1 2 3;
 #X obj 559 362 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
@@ -101,14 +101,14 @@
 #X floatatom 647 464 5 0 0 0 - - -, f 5;
 #X msg 594 458 2 \$1;
 #X obj 594 480 pow;
-#X obj 317 237 r \$0-Accel;
-#X obj 129 238 r \$0-Accel;
-#X msg 29 327 nd \$1 \$2;
-#X msg 213 331 nd \$1 \$2;
+#X obj 317 208 r \$0-Accel;
+#X obj 129 209 r \$0-Accel;
+#X msg 29 298 nd \$1 \$2;
+#X msg 213 302 nd \$1 \$2;
 #X msg 559 404 1;
 #X msg 606 404 -1;
-#X obj 96 284 * 1;
-#X obj 280 286 * 1;
+#X obj 96 255 * 1;
+#X obj 280 257 * 1;
 #X obj 559 329 route 12 13 14 15;
 #X obj 667 365 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -117,10 +117,15 @@
 #X obj 704 385 sel 1;
 #X obj 704 432 s \$0-seqs;
 #X msg 704 410 A 1 1 0 \, B 1 1 0;
+#X msg 306 550 A;
+#X msg 342 550 B;
+#X obj 306 600 s RYTHMEVENT;
+#X obj 306 578 list prepend \$2;
 #X connect 1 0 2 0;
 #X connect 2 0 19 0;
 #X connect 3 0 4 0;
 #X connect 3 0 14 0;
+#X connect 3 0 111 0;
 #X connect 5 0 6 0;
 #X connect 5 0 43 0;
 #X connect 7 0 70 0;
@@ -141,6 +146,7 @@
 #X connect 23 0 26 0;
 #X connect 24 0 17 0;
 #X connect 24 0 27 0;
+#X connect 24 0 112 0;
 #X connect 25 0 67 0;
 #X connect 26 0 24 0;
 #X connect 28 0 5 0;
@@ -233,3 +239,6 @@
 #X connect 107 0 108 0;
 #X connect 108 0 110 0;
 #X connect 110 0 109 0;
+#X connect 111 0 114 0;
+#X connect 112 0 114 0;
+#X connect 114 0 113 0;
