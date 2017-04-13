@@ -1,4 +1,4 @@
-#N canvas 58 395 734 442 10;
+#N canvas 59 392 734 442 10;
 #X obj 129 64 r spotshead;
 #X obj 241 18 loadbang;
 #X obj 241 40 f \$1;
@@ -42,8 +42,8 @@
 #X obj 357 21 r spotsAngleOffset;
 #X obj 129 266 poftranslate 0 -80;
 #X obj 300 273 poftranslate 0 80;
-#X obj 129 348 pofimage touch.png 400;
-#X obj 300 349 pofimage touch.png 400;
+#X obj 129 348 pofimage touch2.png 350;
+#X obj 300 349 pofimage touch2.png 350;
 #X connect 0 0 22 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;

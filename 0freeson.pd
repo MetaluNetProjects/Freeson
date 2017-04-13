@@ -1,4 +1,4 @@
-#N canvas 638 74 482 459 10;
+#N canvas 639 74 482 459 10;
 #X declare -stdlib zexy;
 #X declare -stdpath AutoPreset;
 #X declare -stdpath nusmuk-utils;
@@ -7,7 +7,7 @@
 #X declare -lib creb;
 #X declare -stdpath Fraise -path kep;
 #X obj 128 134 dac~;
-#N canvas 903 362 541 429 POFWIN 1;
+#N canvas 895 359 541 429 POFWIN 1;
 #X obj 161 277 pofwin;
 #X msg 308 173 framerate \$1;
 #X msg 308 133 30;
@@ -190,7 +190,7 @@
 #X connect 48 0 42 0;
 #X connect 48 0 42 1;
 #X restore 47 38 pd AUDIO_SRC;
-#N canvas 271 93 1118 773 Visual 1;
+#N canvas 272 90 1118 773 Visual 0;
 #X obj 539 87 b;
 #X obj 539 108 t b b;
 #X obj 539 130 timer;
@@ -323,7 +323,7 @@
 #X obj 185 408 + 1024;
 #X obj 156 237 r SPECINDEX;
 #X obj 157 259 spigot 1;
-#X obj 432 336 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 432 336 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X floatatom 195 320 5 0 0 0 - - -, f 5;
 #X floatatom 108 253 5 0 0 0 - - -, f 5;
@@ -718,7 +718,7 @@ HISPECTEX 0;
 #X obj 572 10 loadbang;
 #X msg 170 144 0;
 #X msg 139 144 -1;
-#X obj 68 38 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+#X obj 68 38 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
 #X obj 249 277 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -985,7 +985,7 @@ HISPECTEX 0;
 #X obj 323 191 change;
 #X msg 323 166 0;
 #X msg 356 166 1;
-#X obj 287 216 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 287 216 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X msg 391 143 stop;
 #X obj 75 184 spigot 1;
