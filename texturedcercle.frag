@@ -84,7 +84,7 @@ void main (void)
 	a = mix(polarCoord.x, rectCoord.x, abs(rect));
 	//a = polarCoord.x;
 #else
-	a = abs(mod(atan(coord2.y, coord2.x)/M_PI + pow(index * spiGain, spiCompress + 1.0) + 4.0 + lowLevel * lowGainA, 2.0) - 1.0);	
+	a = abs(mod(4.0*atan(coord2.y, coord2.x)/M_PI + pow(index * spiGain, spiCompress + 1.0) + 4.0 + lowLevel * lowGainA, 2.0) - 1.0);	
 #endif
 	
 	float amp = texture2D(
